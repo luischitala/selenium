@@ -1,0 +1,5 @@
+Test Fixture: Preparaciones para antes y después de la prueba
+Test Case: Unidad de código a probar.
+Test suite: Colección de Test cases.
+Test Runner: orquestador de la ejecución
+Test Repport: Resumen de resultados.
