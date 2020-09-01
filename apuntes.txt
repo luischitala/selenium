@@ -51,3 +51,43 @@ is_selected()	Verifica si el elemento está seleccionado, para el caso de checkb
 send_keys(value)	Simula escribir o presionar teclas en un elemento	email_field.send_keys(‘team@platzi.com’)
 submit()	Envía un formulario o confirmación en un text area	search_field.submit()
 value_of_css_property(property_name)	Obtiene el valor de una propiedad CSS del elemento	header.value_of_css_property(‘background-color’)
+
+Demoras Implícita y explícita
+
+Implícita: busca uno o varios elementos en el DOM si no se encuentran
+disponibles por la cantidad de tiempo asignado
+
+Explícita: utiliza condiciones de espera determinadas y continúa
+hasta que se cumplan.
+
+Expected Condition	Descripción	Ejemplo
+element_to_be_clickable(locator)	Espera a que el elemento sea visible y habilitado para hacer clic en el mismo	WebDriverWait(self.driver,10).until(expected_conditions.element_to_be_clickable((By.NAME,“accept_button”)))
+element_to_be_selected(element)	Espera a que un elemento sea seleccionado	subscription = self.driver.find_element_by_name(“terms”). WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_selected(terms)))
+invisibility_of_element_located(locator)	Espera a que un elemento no sea visible o no se encuentre presente en el DOM	WebDriverWait(self.driver,10).until(expected_conditions.invisibility_of_element_located((By.ID,“loading_banner”)))
+presence_of_all_elements_located(locator)	Espera a que por lo menos uno de los elementos que se indican coincida con los presentes en el sitio	WebDriverWait(self.driver,10).until(expected_conditions.presence_of_all_elements_located((By.CLASS_NAME,“input-text”)))
+presence_of_element_located(locator)	Espera a que un elemento sea visible se encuentre presente en el DOM	WebDriverWait(self.driver,10).until(expected_conditions.presence_of_element_located((By.ID,“search-bar”)))
+text_to_be_present_in_element(locator,text_)	Espera a que un elemento con el texto indicado se encuentre presente	WebDriverWait(self.driver,10).until(expected_conditions.text_to_be_present_in_element((By.ID,“seleorder”),“high”))
+title_contains(title)	Espera a que la página contenga en el título exactamente como es indicado	WebDriverWait(self.driver, 10).until(expected_conditions.title_contains(“Welcome”))
+title_is(title)	Espera a que la página tenga un título idéntico a como es indicado	WebDriverWait(self.driver, 10).until(expected_conditions.title_is(“Welcome to Platzi”))
+visibility_of(element)	Espera a que el elemento indicado esté en el DOM, sea visible, su alto y ancho sean mayores a cero	first_name = self.driver.find_element_by_id(“firstname”) WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of(first_name))
+visibility_of_element_located(locator)	Espera a que el elemento indicado por su selector esté en el DOM, sea visible y que su alto y ancho sean mayores a cero	WebDriverWait(self.driver,10).until(expected_conditions.visibility_of_element_located((By.ID,“firstname”)))
+
+Data driven 
+
+TDD
+
+Test Driven Development: desarrollar código en base a pruebas
+para que pueda cumplirlas
+
+Data Driven Testing Desarrollar pruebas en base a código ya
+existente para validar en que escenarios pasan o fallan
+
+Page Object Model
+
+Beneficios
+Crea un alto nivel de abstracción para minimizar cambios en las
+pruebas si los desarrolladores modifican el sitio.
+
+Crea código reutilizable que se puede utilizar en múltiples pruebas.
+
+Las pr uebas con más legibles, flexibvles y vigentes.
